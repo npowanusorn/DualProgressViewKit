@@ -23,17 +23,17 @@ public class DualProgressView: UIView {
     }()
 
     // MARK: - Properties
-    var primaryProgress: Float {
+    public var primaryProgress: Float {
         get { primarySlider.value }
         set { primarySlider.value = newValue }
     }
 
-    var secondaryProgress: Float {
+    public var secondaryProgress: Float {
         get { secondaryProgressView.progress }
         set { secondaryProgressView.setProgress(newValue, animated: true) }
     }
 
-    var onPrimaryProgressChanged: ((Float) -> Void)?
+    public var onPrimaryProgressChanged: ((Float) -> Void)?
 
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -73,19 +73,19 @@ public class DualProgressView: UIView {
     }
 
     // MARK: - Public Methods
-    func setPrimaryProgress(_ progress: Float, animated: Bool) {
+    public func setPrimaryProgress(_ progress: Float, animated: Bool) {
         primarySlider.setValue(progress, animated: animated)
     }
 
-    func setPrimaryColor(_ color: UIColor) {
+    public func setPrimaryColor(_ color: UIColor) {
         primarySlider.minimumTrackTintColor = color
     }
 
-    func setSecondaryProgress(_ progress: Float, animated: Bool) {
+    public func setSecondaryProgress(_ progress: Float, animated: Bool) {
         secondaryProgressView.setProgress(progress, animated: animated)
     }
 
-    func setSecondaryColor(_ color: UIColor) {
+    public func setSecondaryColor(_ color: UIColor) {
         secondaryProgressView.progressTintColor = color
     }
 }
